@@ -1,0 +1,22 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Simple ORM Delphi'
+  ClientHeight = 272
+  ClientWidth = 423
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object btnSalvar: TButton
+    Left = 40
+    Top = 192
+    Width = 89
+    Height = 41
+    Caption = 'Salvar'
+    TabOrder = 0
+  end
+end

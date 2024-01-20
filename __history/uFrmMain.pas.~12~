@@ -1,0 +1,92 @@
+unit uFrmMain;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Menus,
+  Vcl.StdCtrls,
+  Vcl.WinXPickers,
+  {Simple ORM}
+  SimpleInterface,
+  SimpleDAO,
+  SimpleAttributes,
+  SimpleQueryFiredac, Data.DB, Vcl.Grids, Vcl.DBGrids, Cliente,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.Comp.Client, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.Phys.IBBase
+  {Simple ORM};
+
+type
+  TfrmMain = class(TForm)
+    btnSalvar: TButton;
+    edtID: TEdit;
+    edtNome: TEdit;
+    DateP: TDatePicker;
+    DBGCliente: TDBGrid;
+    dsCliente: TDataSource;
+    FDConexao: TFDConnection;
+    FDPhysFBDriverLink: TFDPhysFBDriverLink;
+    procedure FormShow(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMain.btnSalvarClick(Sender: TObject);
+var
+  Conexao: iSimpleQuery;
+  DAOCliente: iSimpleDAO<TCliente>;
+  oCliente: TCliente;
+begin
+  Conexao := TSimpleQueryFiredac.New(FDConexao);
+  oCliente := TCliente.New;
+
+  try
+    try
+      with oCliente do
+      begin
+        SetID(StrToInt(edtID.Text))
+        .SetNome(edtNome.Text)
+        .SetDataNascimento(DateP.Date);
+      end;
+
+      DAOCliente := TSimpleDAO<TCliente>
+                      .New(Conexao)
+                      .Datasource(dsCliente)
+                      .Insert(oCliente);
+    except
+      on E: Exception do
+      ShowMessage(E.Message);
+    end;
+  finally
+    oCliente.Free;
+    DBGCliente.Refresh;
+  end;
+
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  DateP.Date := Date;
+end;
+
+end.

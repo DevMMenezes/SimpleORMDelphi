@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/11/12 08:57:54.000.215,=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/20 10:19:52.000.036,=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/20 10:20:44.000.269,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\uFrmMain.pas=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/20 10:20:44.000.269,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\uFrmMain.dfm=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/01/20 10:20:50.000.250,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\SimpleORM.dproj=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/01/20 10:29:44.000.819,=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/20 10:30:08.000.668,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Cliente.pas=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

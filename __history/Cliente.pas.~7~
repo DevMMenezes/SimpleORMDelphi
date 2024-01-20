@@ -1,0 +1,67 @@
+unit Cliente;
+
+interface
+
+uses
+  SimpleAttributes;
+
+type
+  TCliente = class
+  private
+    FID: Integer;
+    FNome: String;
+    FDataNascimento: TDate;
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: TCliente;
+    function SetID(const Value: Integer): TCliente;
+    function SetNome(const Value: String): TCliente;
+    function SetDataNascimento(const Value: TDate): TCliente;
+
+  published
+    property ID: Integer read FID;
+    property Nome: String read FNome;
+    property DataNascimento: TDate read FDataNascimento;
+  end;
+
+implementation
+
+{ TCliente }
+
+constructor TCliente.Create;
+begin
+
+end;
+
+destructor TCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TCliente.New: TCliente;
+begin
+  Result := Self.Create;
+end;
+
+function TCliente.SetDataNascimento(const Value: TDate): TCliente;
+begin
+  FDataNascimento := Value;
+  Result := Self;
+end;
+
+function TCliente.SetID(const Value: Integer): TCliente;
+begin
+  FID := Value;
+  Result := Self;
+end;
+
+function TCliente.SetNome(const Value: String): TCliente;
+begin
+  FNome := Value;
+  Result := Self;
+end;
+
+end.
